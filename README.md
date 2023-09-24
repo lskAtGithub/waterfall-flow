@@ -1,23 +1,39 @@
-# waterfall-flow
+# waterfall-flow-js
 
-#### 介绍
-瀑布流插件
-
-#### 软件架构
-软件架构说明
-
-
-#### 安装教程
-
-1.  xxxx
-2.  xxxx
-3.  xxxx
+#### 安装
+```
+npm i waterfall-flow-js
+```
 
 #### 使用说明
 
-1.  xxxx
-2.  xxxx
-3.  xxxx
+```
+import waterfall from 'waterfall-flow-js'
+
+// 元素加载时使用
+
+const flow = waterfall(el, imgs, imgWidth, options)
+flow.append()
+```
+##### attr
+| 参数      | 类型 | 默认值 | 说明 |
+| ----------- | ----------- | ----------- | ----------- |
+| el      | HTMLElement       | --       | 该dom元素会作为图片的渲染容器       |
+| imgs   | Array<string>        | --        | 一个包含图片url地址的数组， 所有图片将被渲染到容器中并以瀑布流排列        |
+| imgWidth   | number       | --        | 图片的宽度，必须要执行，会根据执行宽度去分列，注意，图片的宽度并不一定会等于该值。        |
+| options   | Object        | --        | 详细说明请参考（options）        |
+##### methods
+| 名称      | 参数      | 说明 |
+| ----------- | ----------- | ----------- |
+| appendData      | 同imgs     | 追加数据       |
+| unResize   | --       | 停止对元素的尺度变化监听        |
+##### options
+| 属性      | 类型 | 说明 | 默认值 |
+| ----------- | ----------- | ----------- | ----------- |
+| resize      | boolean       | 是否监听元素的尺寸变化，如果监听了可使用 unResize 函数停止监听       | true |
+| gap   | number        | 图片之间的间距，会作为padding给到元素        | 6        |
+| autoFill   | boolean        | 是否使得图片等同列宽，建议使用true， 可极大提升美观性        | true        |
+| onload   | Function        | 该函数会在图片渲染出来后执行        | -- |
 
 #### 参与贡献
 
@@ -25,13 +41,3 @@
 2.  新建 Feat_xxx 分支
 3.  提交代码
 4.  新建 Pull Request
-
-
-#### 特技
-
-1.  使用 Readme\_XXX.md 来支持不同的语言，例如 Readme\_en.md, Readme\_zh.md
-2.  Gitee 官方博客 [blog.gitee.com](https://blog.gitee.com)
-3.  你可以 [https://gitee.com/explore](https://gitee.com/explore) 这个地址来了解 Gitee 上的优秀开源项目
-4.  [GVP](https://gitee.com/gvp) 全称是 Gitee 最有价值开源项目，是综合评定出的优秀开源项目
-5.  Gitee 官方提供的使用手册 [https://gitee.com/help](https://gitee.com/help)
-6.  Gitee 封面人物是一档用来展示 Gitee 会员风采的栏目 [https://gitee.com/gitee-stars/](https://gitee.com/gitee-stars/)
