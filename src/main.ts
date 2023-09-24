@@ -53,7 +53,6 @@ class FlowLayout {
     let columns: number = parseInt(
       (this.el.clientWidth / this.imgWidth).toString()
     )
-    if(columns === this.columnHeight.length) return
     this.el.innerHTML = ''
     this.initWidth = 0
     this.imgNodes = []
@@ -130,6 +129,10 @@ class FlowLayout {
         if (Math.abs(this.initWidth - width) > 10) {
           if (timer !== null) clearTimeout(timer)
           timer = setTimeout(() => {
+            let columns: number = parseInt(
+              (this.el.clientWidth / this.imgWidth).toString()
+            )
+            if(columns === this.columnHeight.length) return
             const imgs = this.imgs
             this.initLayout()
             this.preLoadImg(imgs).finally(() => {
