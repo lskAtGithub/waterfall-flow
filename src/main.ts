@@ -106,7 +106,7 @@ class FlowLayout {
           }
         }
         img.onerror = function () {
-          _this.imgNodes[index] = null
+          _this.imgNodes[index] = img
           if (_this.imgNodes.indexOf(null) === -1) {
             resolve()
           }
