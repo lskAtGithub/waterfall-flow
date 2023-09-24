@@ -50,6 +50,10 @@ class FlowLayout {
   }
 
   initLayout() {
+    let columns: number = parseInt(
+      (this.el.clientWidth / this.imgWidth).toString()
+    )
+    if(columns === this.columnHeight.length) return
     this.el.innerHTML = ''
     this.initWidth = 0
     this.imgNodes = []
@@ -57,9 +61,6 @@ class FlowLayout {
     this.columnHeight = []
     this.el.style.display = 'flex'
     this.el.style.alignItems = 'flex-start'
-    let columns: number = parseInt(
-      (this.el.clientWidth / this.imgWidth).toString()
-    )
     this.columnHeight = []
     for (let index = 0; index < columns; index++) {
       this.columnHeight.push(0)
