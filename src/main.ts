@@ -13,9 +13,6 @@ const waterfallFlowLayout = function ({
   if (!el || !imgs || !imgWidth) {
     throw new Error('缺少必要参数， 瀑布流创建失败')
   }
-  if (!el) {
-    throw new Error('并未找到传入的el元素节点')
-  }
   const flow = new FlowLayout({ el, imgWidth, imgs, options })
   if (options && options.resize) {
     flow.resize()

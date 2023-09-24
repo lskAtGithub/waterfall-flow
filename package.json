@@ -1,10 +1,11 @@
 {
   "name": "waterfall-flow-js",
-  "version": "1.0.3",
+  "version": "1.0.6",
   "description": "js实现的瀑布流插件",
   "main": "dist/waterfall-flow.cjs",
-  "module": "dist/waterfall-flow.js",
+  "module": "dist/waterfall-flow-js.js",
   "type": "module",
+  "types": "/src/WaterFallType.d.ts",
   "scripts": {
     "dev": "vite",
     "build": "tsc && vite build",
