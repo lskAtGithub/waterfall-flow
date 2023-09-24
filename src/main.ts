@@ -87,6 +87,7 @@ class FlowLayout {
       this.columnHeight[minIndex] = nowHeight
     }
     this.initWidth = this.el.clientWidth
+    if(this.options?.onload) this.options.onload()
   }
 
   preLoadImg(imgs: Array<string>) {

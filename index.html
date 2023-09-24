@@ -1,4 +1,4 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
@@ -6,7 +6,42 @@
     <title>Vite + TS</title>
   </head>
   <body>
+    <p>
+      <button onclick="addData()">add data</button>
+    </p>
     <div id="app"></div>
-    <script type="module" src="/src/main.ts"></script>
+
+    <script type="module">
+      import waterfallFlowLayout from './src/main.ts'
+      const imgs = [
+        'https://th.bing.com/th/id/OIP.ZkoPhpKfJwsvGmpm8RsragHaFp?pid=ImgDet&rs=1',
+        'https://img.zcool.cn/community/011aad554be56f000001bf72c38864.jpg@1280w_1l_2o_100sh.jpg',
+        'https://th.bing.com/th/id/R.866674dcd5e22a0b074ac85572b536eb?rik=ybxbYjxL7GeqJQ&riu=http%3a%2f%2fpic12.photophoto.cn%2f20090707%2f0034034803692952_b.jpg&ehk=tMg%2fUKPHxkva0JznQwhBbYk9JFxeZA2Lla37Tq7DdBo%3d&risl=&pid=ImgRaw&r=0',
+        'https://bpic.588ku.com/back_origin_min_pic/20/04/19/f753e29e3dbe2ad75b8f6d6053199faa.jpg',
+        'https://bpic.588ku.com/back_origin_min_pic/20/05/07/4049dcbc46c2450316fa2266feb6ad2d.jpg',
+        'https://th.bing.com/th/id/R.f2b393e462a9517d63e560e81cc9f8dd?rik=j7w4h5hHfc%2fPfg&riu=http%3a%2f%2fstatic.bizhishuo.com%2fup%2fallimg%2f1907%2f1-1ZH4235S8.jpg&ehk=UgBbQjLqipfTkL2JngaEKNPL%2bM53yTIpeSMorRcZG48%3d&risl=&pid=ImgRaw&r=0',
+        'https://i.hexuexiao.cn/up/cd/31/2f/8d96f693d9b8e29419827c3ed52f31cd.jpg',
+        'https://th.bing.com/th/id/OIP.QsFuE2t-WeMiFKD2ehUgIwHaK2?pid=ImgDet&rs=1',
+        'https://th.bing.com/th/id/R.8e152ab8bdb0964ea87076d1f5b23de5?rik=ZKfG%2fcvqoDByXw&riu=http%3a%2f%2fimage11.m1905.cn%2fuploadfile%2f2013%2f0327%2f20130327104108527.jpg&ehk=XgCZZMlNMAdLcxiiuTjBcoSFwl1kracczfYbqVZh7%2fg%3d&risl=&pid=ImgRaw&r=0',
+        'https://photo.16pic.com/00/34/38/16pic_3438194_b.jpg',
+        'https://img.sj33.cn/uploads/allimg/201202/20120224211512553.jpg',
+      ]
+      const layout = waterfallFlowLayout({
+        el: '#app',
+        imgs,
+        imgWidth: 200,
+        options: {
+          autoFill: true,
+          resize: true,
+        },
+      })
+      function unResize() {
+        layout.unResize()
+      }
+
+      function addData() {
+        layout.appendData(imgs)
+      }
+    </script>
   </body>
 </html>

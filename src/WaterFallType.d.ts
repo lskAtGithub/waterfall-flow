@@ -7,6 +7,7 @@ export interface Options {
   resize?: boolean
   gap?: number
   autoFill?: boolean
+  onload?: Function
 }
 
 export interface WaterfallParams {
