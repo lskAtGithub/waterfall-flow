@@ -13,7 +13,11 @@ import waterfall from 'waterfall-flow-js'
 // 元素加载时使用
 
 const flow = waterfall(el, imgs, imgWidth, options)
-flow.append()
+
+flow.appendData(imgs) // 需要追加数据时调用
+
+flow.unResize() // 停止元素尺寸监听时调用
+
 ```
 ##### attr
 | 参数      | 类型 | 默认值 | 说明 |
