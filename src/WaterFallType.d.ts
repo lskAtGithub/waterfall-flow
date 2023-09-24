@@ -11,13 +11,6 @@ export interface Options {
 }
 
 export interface WaterfallParams {
-  el: string
-  imgs: Array<string>
-  imgWidth: number
-  options?: Options
-}
-
-export interface WaterfallClassParams {
   el: HTMLElement
   imgs: Array<string>
   imgWidth: number

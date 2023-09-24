@@ -2,7 +2,6 @@ import type {
   WaterfallFlowResult,
   WaterfallParams,
   Options,
-  WaterfallClassParams,
 } from './WaterFallType'
 
 const waterfallFlowLayout = function ({
@@ -14,11 +13,10 @@ const waterfallFlowLayout = function ({
   if (!el || !imgs || !imgWidth) {
     throw new Error('缺少必要参数， 瀑布流创建失败')
   }
-  const app: HTMLElement = document.querySelector(el) as HTMLElement
-  if (!app) {
+  if (!el) {
     throw new Error('并未找到传入的el元素节点')
   }
-  const flow = new FlowLayout({ el: app, imgWidth, imgs, options })
+  const flow = new FlowLayout({ el, imgWidth, imgs, options })
   if (options && options.resize) {
     flow.resize()
   }
@@ -37,7 +35,7 @@ class FlowLayout {
   private initWidth: number
   private imgNodes: Array<Node | null>
   private columnHeight: Array<number>
-  constructor({ el, imgWidth, imgs, options }: WaterfallClassParams) {
+  constructor({ el, imgWidth, imgs, options }: WaterfallParams) {
     this.el = el
     this.imgWidth = imgWidth
     this.imgs = []
@@ -87,7 +85,7 @@ class FlowLayout {
       this.columnHeight[minIndex] = nowHeight
     }
     this.initWidth = this.el.clientWidth
-    if(this.options?.onload) this.options.onload()
+    if (this.options?.onload) this.options.onload()
   }
 
   preLoadImg(imgs: Array<string>) {

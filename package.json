@@ -1,6 +1,6 @@
 {
   "name": "waterfall-flow-js",
-  "version": "1.0.1",
+  "version": "1.0.3",
   "description": "js实现的瀑布流插件",
   "main": "dist/waterfall-flow.cjs",
   "module": "dist/waterfall-flow.js",
