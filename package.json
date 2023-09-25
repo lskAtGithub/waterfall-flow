@@ -1,6 +1,6 @@
 {
   "name": "waterfall-flow-js",
-  "version": "1.0.11",
+  "version": "1.0.12",
   "description": "js实现的瀑布流插件",
   "main": "dist/waterfall-flow.cjs",
   "module": "dist/waterfall-flow-js.js",
@@ -24,6 +24,6 @@
     "js",
     "waterfall"
   ],
-  "author": "liushengkai",
+  "author": "lsk-at-npm liushengkai95@gmail.com",
   "license": "MIT"
 }
